@@ -6,31 +6,48 @@ class App extends Component {
     return (
       <div className="App">
         <div>
+          <p>Тип сделки</p>
           <select name="" id="">
             <option value="">Товар</option>
             <option value="">Услуги</option>
           </select>
         </div>
         <div>
+          <p>Название</p>
           <input type="text"/>
         </div>
         <div>
+          <p>Описание сделки</p>
           <textarea name="" id="" cols="30" rows="10"/>
         </div>
         <div>
-          <div><input type="radio"/></div>
-          <div><input type="radio"/></div>
+          <div>
+            <input type="radio" id='saler' value='saler'/>
+            <label htmlFor="saler">Продавец</label>
+          </div>
+          <div>
+            <input type="radio" id='custumer' value='custumer'/>
+            <label htmlFor="custumer">Покупатель</label>
+          </div>
         </div>
         <div>
+          <p>Е-mail покупателя</p>
           <input type="email"/>
         </div>
         <div>
-          <div><input type="radio"/></div>
-          <div><input type="radio"/></div>
+          <p>Исполнитель</p>
+          <div>
+            <input type="radio" id='fiz'/>
+            <label htmlFor="fiz">Физическое лицо</label>
+          </div>
+          <div>
+            <input type="radio" id='ur'/>
+            <label htmlFor="ur">Юридическое лицо</label>
+          </div>
         </div>
         <div>
           <div>
-            <p>Фамилия</p>
+            <p>Фамилия <span>{  }</span></p>
             <input type="text"/>
           </div>
           <div>
@@ -47,10 +64,14 @@ class App extends Component {
           </div>
         </div>
         <div>
+          <p>Способ получаения денег:</p>
           <div>
-            <input type="radio"/>
-            <input type="radio"/>
-            <input type="radio"/>
+            <input type="radio" id='rek'/>
+            <label htmlFor="rek">Реквизиты</label>
+            <input type="radio" id='card'/>
+            <label htmlFor="card">Карта</label>
+            <input type="radio" id='moneyYandex'/>
+            <label htmlFor="moneyYandex">Яндекс деньги</label>
           </div>
           <div>
             <div>
