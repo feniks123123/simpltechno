@@ -1,87 +1,18 @@
 import React, { Component } from 'react';
+
 import Trade from './Component/Trade';
-import './App.css';
+import Executor from './Component/Executor';
+import MethodMoney from "./Component/MethodMoney";
+
+import './styles.less';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
         <Trade/>
-        <div>
-          <p>Исполнитель</p>
-          <div>
-            <input type="radio" id='fiz'/>
-            <label htmlFor="fiz">Физическое лицо</label>
-          </div>
-          <div>
-            <input type="radio" id='ur'/>
-            <label htmlFor="ur">Юридическое лицо</label>
-          </div>
-        </div>
-        <div>
-          <div>
-            <p>Фамилия <span>{  }</span></p>
-            <input type="text"/>
-          </div>
-          <div>
-            <p>Имя</p>
-            <input type="text"/>
-          </div>
-          <div>
-            <p>Отчество</p>
-            <input type="text"/>
-          </div>
-          <div>
-            <p>Дата рождения</p>
-            <input type="date"/>
-          </div>
-        </div>
-        <div>
-          <p>Способ получаения денег:</p>
-          <div>
-            <input type="radio" id='rek'/>
-            <label htmlFor="rek">Реквизиты</label>
-            <input type="radio" id='card'/>
-            <label htmlFor="card">Карта</label>
-            <input type="radio" id='moneyYandex'/>
-            <label htmlFor="moneyYandex">Яндекс деньги</label>
-          </div>
-          <div>
-            <div>
-              <p>Наименование</p>
-              <input type="text"/>
-            </div>
-            <div>
-              <p>Бик</p>
-              <input type="text"/>
-            </div>
-            <div>
-              <p>Лицевой счет</p>
-              <input type="text"/>
-            </div>
-            <div>
-              <p>Корр.счет</p>
-              <input type="text"/>
-            </div>
-            <div>
-              <p>Имя получателя платежа</p>
-              <input type="text"/>
-            </div>
-            <div>
-              <p>ИНН</p>
-              <input type="text"/>
-            </div>
-            <div>
-              <p>КПП</p>
-              <input type="text"/>
-            </div>
-            <div>
-              <p>БАНК</p>
-              <input type="text"/>
-            </div>
-          </div>
-
-        </div>
+        <Executor/>
+        <MethodMoney/>
         <div>
           <p>Время исполнения заказа</p>
           <input type="time"/>

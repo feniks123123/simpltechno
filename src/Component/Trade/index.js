@@ -1,44 +1,94 @@
 import React, { Component } from 'react';
 
+import { re } from '../../utils/isValidation';
+
 import './styles.less';
 
+
 class Trade extends Component {
+  state = {
+    focus: false,
+    name: '',
+    email: '',
+    error: {
+      emailError: false
+    }
+  };
+
   render() {
+    const { name, email, focus } = this.state;
+    let input = 'Trade-input';
+
+    if(focus) {
+      input = `${ input } ${ input }--active`;
+    }
+
     return(
       <div className='Trade'>
-        <div>
-          <p>Тип сделки</p>
-          <select name="" id="">
+        <h1 className='Trade-title'>{name}</h1>
+        <div className='Trade-container'>
+          <p className='Trade-text'>Тип сделки</p>
+          <select className='Trade-select'>
             <option value="">Товар</option>
             <option value="">Услуги</option>
           </select>
         </div>
-        <div>
-          <p>Название</p>
-          <input type="text"/>
+        <div className='Trade-container'>
+          <p className='Trade-text'>Название</p>
+          <input type="text" name='name' className={input} value={name} { ...this.propsInput }/>
         </div>
-        <div>
-          <p>Описание сделки</p>
+        <div className='Trade-container'>
+          <p className='Trade-text'>Описание сделки</p>
           <textarea name="" id="" cols="30" rows="10"/>
         </div>
-        <div>
-          <p>Я выступаю как:</p>
-          <div>
-            <input type="radio" id='saler' value='saler'/>
-            <label htmlFor="saler">Продавец</label>
-          </div>
-          <div>
-            <input type="radio" id='custumer' value='custumer'/>
-            <label htmlFor="custumer">Покупатель</label>
+        <div className='Trade-container'>
+          <p className='Trade-text'>Я выступаю как:</p>
+          <div className='Trade-container-radio'>
+            <div>
+              <input type="radio" name='client' id='Seller' value='Seller'/>
+              <label htmlFor="Seller">Продавец</label>
+            </div>
+            <div>
+              <input type="radio" name='client' id='Buyer' value='Buyer'/>
+              <label htmlFor="Buyer">Покупатель</label>
+            </div>
           </div>
         </div>
-        <div>
-          <p>Е-mail покупателя</p>
-          <input type="email"/>
+        <div className='Trade-container'>
+          <p className='Trade-text'>Е-mail покупателя</p>
+          <input type="email" name='email' className={input} value={email}  { ...this.propsInput }/>
         </div>
       </div>
     )
   }
+
+  onChange = (event) => {
+    const name = event.target.name;
+    let value = event.target.value;
+
+    this.setState({ [ name ]: value });
+  };
+
+  focus = () => {
+    this.setState({ focus: true })
+  };
+
+  blur = (event) => {
+    const { email } = this.state;
+    const type = event.target.type;
+    if(type === 'email') {
+      if(re.test(email) && email.length > 0){
+        this.setState({ error: { email: true } })
+      }
+    }
+    this.setState({ focus: false })
+  };
+
+  propsInput = {
+    onBlur: this.blur,
+    onFocus: this.focus,
+    onChange: this.onChange
+  };
 }
 
 export default Trade;

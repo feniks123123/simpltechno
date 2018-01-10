@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700');
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -16,6 +18,7 @@ time, mark, audio, video {
     border: 0;
     font-size: 100%;
     font: inherit;
+    font-family: 'Roboto', sans-serif;
     vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
@@ -40,4 +43,34 @@ q:before, q:after {
 table {
     border-collapse: collapse;
     border-spacing: 0;
+}
+
+input[type='text'], input[type='date'] {
+    width: 100%;
+    max-width: 280px;
+    height: 20px;
+    outline: none;
+    border: 1px solid;
+    box-shadow: none;
+}
+
+select {
+    width: 100%;
+    max-width: 280px;
+    height: 20px;
+    outline: none;
+    border-radius: 0;
+}
+
+textarea {
+    resize: none;
+    max-width: 280px;
+    height: 140px;
+    border: 1px solid #e2e6e8;
+    outline: none;
+    font-size: 14px;
+    padding: 15px;
+    -webkit-appearance: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
 }

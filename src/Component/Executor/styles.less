@@ -1,0 +1,40 @@
+@c: .Executor;
+
+@{c} {
+  &-text {
+    text-transform: uppercase;
+    font-weight: 500;
+    margin-bottom: 15px;
+    > span {
+      display: inline-block;
+      margin-left: 15px;
+      color: #61c1f2;
+      text-transform: none;
+    }
+  }
+
+  input[type='date']{
+    background:#fff url(https://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/calendar_2.png) 99% 50%  no-repeat;
+  }
+
+  [type="date"]::-webkit-inner-spin-button {
+    display: none;
+  }
+  [type="date"]::-webkit-calendar-picker-indicator {
+    opacity: 0;
+  }
+
+  &-container {
+    margin-bottom: 20px;
+    &-radio {
+      display: flex;
+      div {
+        display: flex;
+        align-items: baseline;
+      }
+      > div:first-child {
+        margin-right: 30px;
+      }
+    }
+  }
+}

@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './reset.css';
+import './reset.less';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 
