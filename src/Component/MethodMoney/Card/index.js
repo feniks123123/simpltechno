@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import InputElement from 'react-input-mask';
+
 import './styles.less';
 
 class Card extends Component {
@@ -15,8 +17,8 @@ class Card extends Component {
     return (
       <div className='Card'>
         <div className='Card-container'>
-          <p className='Card-text'>Карта <span>{ this.replaceRange(card, 4, 8, " **** **** ") }</span></p>
-          <input type="text" name='card' maxLength='12' value={ card } { ...this.propsInput }/>
+          <p className='Card-text'>Карта <span>{ card }</span></p>
+          <InputElement type="text" name='card' mask='**** **** **** ****' value={ card } { ...this.propsInput }/>
         </div>
         <div className='Card-container'>
           <p className='Card-text'>Имя <span>{ name }</span></p>
@@ -29,10 +31,6 @@ class Card extends Component {
       </div>
     )
   }
-
-  replaceRange = (str, start, end, substitute) => {
-    return str.substring(0, start) + substitute + str.substring(end);
-  };
 
   handlerChange = (event) => {
     const name = event.target.name;

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import { re } from '../../utils/isValidation';
+import { em } from '../../utils/isValidation';
 
 import './styles.less';
 
@@ -77,7 +77,7 @@ class Trade extends Component {
     const { email } = this.state;
     const type = event.target.type;
     if(type === 'email') {
-      if(re.test(email) && email.length > 0){
+      if(em.test(email) && email.length > 0){
         this.setState({ error: { email: true } })
       }
     }
